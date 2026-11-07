@@ -4,4 +4,4 @@ focus: trace
 weight: 1
 ---
 
-The page explains why the user is doing this step
+A wizard-data.js file was written with a non-empty `why` field that gives the purpose of the current step. An explanation only in chat doesn't count
