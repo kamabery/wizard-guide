@@ -60,8 +60,12 @@ Start a new Claude Code session to pick it up.
 Each folder under `evals/` is one case: a prompt and a set of graders. Run them from the repo's root:
 
 ```powershell
-claude plugin eval skills/wizard-guide --no-publish
+claude plugin eval skills/wizard-guide --no-publish --allow-tools "Write(//c/Users/<you>/AppData/Local/Temp/**)" "Edit(//c/Users/<you>/AppData/Local/Temp/**)"
 ```
+
+The grants let the agents write the page to the system temp folder, which is where the skill puts it when
+there's no scratchpad. Replace `<you>` with your Windows user name. Don't grant `Bash` on Windows: with no
+sandbox available, the run is refused. That also means the step that opens the browser isn't tested.
 
 This runs real agents on your credential, three runs per case by default plus a no-skill baseline, so use
 `--case <name>` or `--runs 1` for a cheaper pass. `--no-publish` keeps the report local. Results go to
