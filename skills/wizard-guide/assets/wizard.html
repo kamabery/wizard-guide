@@ -110,6 +110,12 @@
       app.append(list);
     }
 
+    if (w.why) {
+      const section = el('section');
+      section.append(el('h2', '', "Why you're doing this"), rich('p', w.why));
+      app.append(section);
+    }
+
     if (w.actions && w.actions.length) {
       const section = el('section');
       section.append(el('h2', '', w.heading || 'Do this'));

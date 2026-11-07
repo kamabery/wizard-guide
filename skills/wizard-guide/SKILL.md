@@ -54,6 +54,10 @@ When the plan changes, update `steps` and say so in chat.
 Keep each page to about one screen in a narrow window: at most 200 words apart from commands, with a
 `summary` of one or two sentences. The user should be able to read it and act without scrolling.
 
+- **Say why, on every step.** Fill in `why` with a sentence or two on what this step achieves for the
+  user's goal and what goes wrong without it. People following instructions they don't understand can't
+  spot when something on their screen is off, so name this step's purpose rather than describing its
+  clicks.
 - **Only what this step needs.** Detail about later steps waits for those steps, and an assumption goes
   on the step it affects. Moving caveats out of chat doesn't mean moving all of them onto the page, so
   drop any that doesn't change what the user does next.
@@ -106,6 +110,7 @@ window.WIZARD = {
   steps: ["Check existing token", "Create token", "Store it", "Verify"],
   current: 2,                         // 1-based; steps.length + 1 means finished
   summary: "Step 1 passed: the factory's token has a description.",
+  why: "The deploy needs its own token, so revoking it later can't break anything else.",
   heading: "Do this",                 // defaults to "Do this"
   actions: [
     { text: "Open the token page:", url: "https://example.com/tokens" },  // a clickable link
@@ -124,6 +129,6 @@ window.WIZARD = {
 
 ## Finishing
 
-Set `current` to `steps.length + 1`, put the outcome in `summary`, and remove `actions` and `replies`. In
+Set `current` to `steps.length + 1`, put the outcome in `summary`, and remove `why`, `actions` and `replies`. In
 chat, give a short table of what's in place and what proved each part, what's still unproven, and the next
 decision. This is the one message that can run longer.
