@@ -27,7 +27,9 @@ with sign-ins, portal screens, creating secrets and decisions.
    directory.
 2. Write step 1 to `<wizard-folder>/wizard-data.js` (see "The data file").
 3. Open `wizard.html` in the default browser: `Start-Process` on Windows, `open` on macOS, `xdg-open` on
-   Linux. Give the user the full path in case it didn't open.
+   Linux. Open it yourself rather than showing the path, which only takes up chat space. Give the full
+   path only if the command fails or the user says the page didn't open. Open it once: for later steps
+   the user refreshes, because opening it again would add a tab each time.
 
 ## 3. Run each step
 
