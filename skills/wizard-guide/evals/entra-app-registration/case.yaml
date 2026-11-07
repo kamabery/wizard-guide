@@ -1,0 +1,5 @@
+schema_version: "1.1"
+name: entra-app-registration
+expected_outcome: |
+  A local wizard page shows step 1 of a multi-step guide through the portal, with the tenant choice handled
+  as a decision that carries a recommendation. The chat message stays very short.

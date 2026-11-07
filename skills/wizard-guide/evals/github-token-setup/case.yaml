@@ -1,0 +1,5 @@
+schema_version: "1.1"
+name: github-token-setup
+expected_outcome: |
+  A local wizard page shows step 1 of a multi-step guide, with lettered replies. The chat message stays
+  very short, and the plan keeps the token out of the conversation and out of the wizard's files.
